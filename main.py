@@ -23,7 +23,7 @@ class Eagle(Creature):
         self.yDistance += dy
 
 
-class Pegasus(Eagle, Horse):
+class Pegasus(Horse, Eagle):
     def __init__(self, name):
         super().__init__(name)
 
@@ -34,8 +34,8 @@ class Pegasus(Eagle, Horse):
     def getPos(self):
         return (self.xDistance, self.yDistance)
 
-    def voice(self):
-        print(self.sound)
+    def voice(self, name):
+        print(Eagle(name).sound)
 
 
 if __name__ == '__main__':
@@ -48,6 +48,6 @@ if __name__ == '__main__':
     p1.move(-5, 20)
     print(p1.getPos())
 
-    p1.voice()
+    p1.voice('peg')
 
     a = 10
